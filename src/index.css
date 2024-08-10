@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  font-family: Outfit;
+}
+#root{
+  min-height: 100vh;
+  display: flex;
+  /* Add animation */
+  animation: fadeIn 1.5s;
+}
+
+/* Make it responsive UI, so that is looks good in mobile phone also*/
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
