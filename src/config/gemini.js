@@ -16,7 +16,7 @@ import {
   }from "@google/generative-ai";
   
 //   const apiKey = process.env.GEMINI_API_KEY;
-  const apiKey = "AIzaSyArFLmyk5s3nfVTZ7bL0rBkWLzsaDqs0j4";
+ const apiKey = import.meta.env.VITE_Token; // For Vite react app, for defining api in .env file, name should be prefix with VITE_ otherwise it will give error
   const genAI = new GoogleGenerativeAI(apiKey);
   
   const model = genAI.getGenerativeModel({
