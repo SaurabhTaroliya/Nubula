@@ -1,0 +1,196 @@
+/* Full-page layout */
+.login-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9A616D;
+  }
+  
+  /* Flex container for image and form */
+  .login-container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    max-width: 900px;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  /* Left side image container */
+  .login-image {
+    flex: 1;
+    background-color: #9A616D;
+  }
+  
+  .login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+  }
+  
+  /* Right side form container */
+  .login-form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 2rem;
+  }
+  
+  .login-content {
+    width: 100%;
+    max-width: 380px;
+    color: #fff;
+  }
+  
+  /* Title */
+  .login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .login-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #555;
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #ff6219;
+  }
+  
+  /* Submit button */
+  .btn1 {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #ff6219;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .btn1:hover {
+    background-color: #e55b1a;
+  }
+  
+  /* Links */
+  .form-links {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .forgot-password,
+  .signup-link {
+    color: #ff6219;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover,
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+  .terms {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .terms .small-text {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
+  .terms .small-text:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Stack image and form vertically */
+    .login-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    /* Adjust the height of the image container for smaller screens */
+    .login-image {
+      height: 200px;
+      border-radius: 1rem 1rem 0 0;
+    }
+  
+    /* Adjust form padding for smaller screens */
+    .login-form-container {
+      padding: 1rem;
+    }
+  
+    /* Ensure full width form fields */
+    .login-content {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  
+    /* Adjust title size for smaller screens */
+    .login-title {
+      font-size: 1.8rem;
+    }
+  
+    /* Adjust form input and button sizes */
+    .btn1 {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further reduce padding on very small devices */
+    .login-form-container {
+      padding: 0.75rem;
+    }
+  
+    /* Reduce font sizes for mobile */
+    .login-title {
+      font-size: 1.5rem;
+    }
+  
+    .form-group input {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  
+    .btn1 {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  }
+  

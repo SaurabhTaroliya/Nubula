@@ -1,0 +1,60 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 15px;
+}
+
+.expand-left-bar {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.left-nav-bar {
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+    justify-content: space-around;
+    
+}
+
+.user-profile-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.icon-expand {
+    font-size: 24px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, color 0.2s; /* Add hover transition */
+}
+
+.icon-expand:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    color: #007bff; /* Change color on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.main-new-chat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px 10px;
+    transition: transform 0.2s, background-color 0.2s; /* Smooth hover effect */
+}
+
+.main-new-chat:hover:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.company-name h4 {
+    margin: 0;
+    font-weight: 600;
+}

@@ -1,0 +1,33 @@
+.features{
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: .375rem;
+    padding: 8px 0;
+    border: 1px solid green;
+    z-index: 100;
+}
+
+.feature{
+    width: 85%;
+    border-radius: .375rem;
+    padding: 0.375rem;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 0.625rem;
+    &:hover{
+        background-color: brown;
+    }
+
+    .item{
+       text-decoration: none; 
+    }
+}

@@ -1,0 +1,204 @@
+/* Full-page layout */
+.sign-up-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9A616D;
+  }
+  
+  /* Flex container for image and form */
+  .sign-up-container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    max-width: 900px;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  /* Left side image container */
+  .sign-up-image {
+    flex: 1;
+    background-color: #9A616D;
+  }
+  
+  .sign-up-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+  }
+  
+  /* Right side form container */
+  .sign-up-form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 1.5rem;
+  }
+  
+  .sign-up-content {
+    width: 100%;
+    max-width: 380px;
+    color: #fff;
+  }
+  
+  /* Title */
+  .sign-up-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form fields */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.65rem;
+    border-radius: 0.25rem;
+    border: 1px solid #555;
+    background-color: #222;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #ff6219;
+  }
+  
+  /* Form row for first and last name */
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Gender */
+  .gender-label {
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  
+  .gender-options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .gender-option {
+    color: white;
+  }
+  
+  /* Submit Button */
+  .btn1 {
+    width: 100%;
+    padding: 0.65rem;
+    background-color: #ff6219;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  
+  .btn1:hover {
+    background-color: #e55b1a;
+  }
+  
+  /* Sign-in link */
+  .form-links {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  
+  .login-link {
+    color: #ff6219;
+    text-decoration: none;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Stack image and form vertically */
+    .sign-up-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    /* Adjust the height of the image container for smaller screens */
+    .sign-up-image {
+      height: 200px;
+      border-radius: 1rem 1rem 0 0;
+    }
+  
+    /* Adjust form padding for smaller screens */
+    .sign-up-form-container {
+      padding: 1rem;
+    }
+  
+    /* Ensure full width form fields */
+    .sign-up-content {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  
+    /* Adjust title size for smaller screens */
+    .sign-up-title {
+      font-size: 1.5rem;
+    }
+  
+    /* Make form fields stack vertically */
+    .form-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .btn1 {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further reduce padding on very small devices */
+    .sign-up-form-container {
+      padding: 0.75rem;
+    }
+  
+    /* Reduce font sizes for mobile */
+    .sign-up-title {
+      font-size: 1.4rem;
+    }
+  
+    .form-group input {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  
+    .btn1 {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+  }
+  
+
+
+
+  

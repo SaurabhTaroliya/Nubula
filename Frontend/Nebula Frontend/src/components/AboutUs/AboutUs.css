@@ -1,0 +1,65 @@
+.about-us {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .about-us-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-us-header h1 {
+    font-size: 2.5em;
+    color: #007bff;
+  }
+  
+  .about-us-header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .about-us-section {
+    margin-bottom: 30px;
+  }
+  
+  .about-us-section h2 {
+    font-size: 2em;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-section p, .about-us-section ul, .about-us-section ol {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .about-us-section ul, .about-us-section ol {
+    margin-left: 20px;
+  }
+  
+  .about-us-section ul li, .about-us-section ol li {
+    margin-bottom: 10px;
+  }
+  
+  .back-to-chat-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-to-chat-button:hover {
+    background-color: #0056b3;
+  }
+  
