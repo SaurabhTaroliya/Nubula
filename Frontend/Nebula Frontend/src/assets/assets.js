@@ -15,6 +15,15 @@ import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
 import nebula from "./nebula.jpg"
 import nebula1 from "./nebula1.jpg"
+// import icon1 from "./Nebula icon 1.jpg";
+
+import icon1 from "./icon 1.png";
+import icon2 from "./icon 2.png";
+import icon3 from "./icon 3.png";
+import icon4 from "./icon 4.png";
+import icon5 from "./icon 5.jpg";
+
+
 
 export const assets = {
     history_icon,
@@ -33,5 +42,10 @@ export const assets = {
     send_icon,
     gemini_icon,
     nebula,
-    nebula1
+    nebula1,
+    icon1,
+    icon2,
+    icon3,
+    icon4,
+    icon5
 }

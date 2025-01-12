@@ -178,6 +178,8 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
+import { IoNavigateSharp } from "react-icons/io5";
+
 
 const Profile = () => {
   const { userInfo, setUserInfo, userPromptHistory } = useContext(Context);
@@ -280,6 +282,7 @@ const Profile = () => {
       <div className="profile-details">
         <div className="profile-field">
           <label>First Name</label>
+
           <input
             type="text"
             name="firstname"
@@ -325,21 +328,37 @@ const Profile = () => {
         </div>
         <div className="profile-field">
           <label>LinkedIn</label>
-          <input
-            type="url"
-            name="linkedIn"
-            value={user.linkedIn}
-            onChange={handleChange}
-          />
+          <div className="fieldPlusIcon">
+            <input
+              type="url"
+              name="github"
+              value={user.linkedIn}
+              onChange={handleChange}
+            />
+              {user.linkedIn && (
+                <a href={user.linkedIn} target="_blank">
+                  <IoNavigateSharp />
+                </a>
+            )}
+          </div>
         </div>
         <div className="profile-field">
           <label>GitHub</label>
-          <input
-            type="url"
-            name="github"
-            value={user.github}
-            onChange={handleChange}
-          />
+          <div className="fieldPlusIcon">
+            <input
+              type="url"
+              name="github"
+              value={user.github}
+              onChange={handleChange}
+            />
+              {user.github && (
+                <a href={user.github} target="_blank" rel="noopener noreferrer">
+                  <IoNavigateSharp />
+                </a>
+            )}
+          </div>
+          
+          
         </div>
         <div className="profile-field bio-field">
           <label>Bio</label>

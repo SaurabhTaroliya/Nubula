@@ -178,6 +178,21 @@
   margin-bottom: 5px;
 }
 
+.profile-field .fieldPlusIcon {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+
+  input{
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+  }
+}
+
 .profile-field input,
 .profile-field textarea {
   padding: 8px;

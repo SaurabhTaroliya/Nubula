@@ -58,24 +58,23 @@ const App = () => {
     setUserInfo(userData)
   },[])
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     const decodedToken = jwtDecode(token);
-  //     const userPromptHistory = JSON.parse(decodedToken.userPromptHistory || '[]');
-  //     setUserInfo({
-  //       "firstName": decodedToken.firstName,
-  //       "lastName": decodedToken.lastName,
-  //       "email": decodedToken.email,
-  //       "password":decodedToken.password,
-  //       "gender": decodedToken.gender,
-  //       "id": decodedToken.id,
-  //       "dateOfJoining": decodedToken.dateOfJoining,
-  //       "userPromptHistory": userPromptHistory
-  //     });
-  //     setPrevPrompts(userPromptHistory);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      const userPromptHistory = user.userPromptHistory || '[]';
+      // setUserInfo({
+      //   "firstName": decodedToken.firstName,
+      //   "lastName": decodedToken.lastName,
+      //   "email": decodedToken.email,
+      //   "password":decodedToken.password,
+      //   "gender": decodedToken.gender,
+      //   "id": decodedToken.id,
+      //   "dateOfJoining": decodedToken.dateOfJoining,
+      //   "userPromptHistory": userPromptHistory
+      // });
+      setPrevPrompts(userPromptHistory);
+    }
+  }, []);
 
   return (
     <>

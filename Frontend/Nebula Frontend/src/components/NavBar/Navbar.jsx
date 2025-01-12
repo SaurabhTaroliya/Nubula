@@ -97,7 +97,8 @@ export const Navbar = () => {
         )}
       </div>
       <div className="company-name">
-        <h4>Nebula</h4>
+        {/* <h4>Nebula</h4> */}
+        <img src={assets.icon2} alt="" />
       </div>
       <div className="user-profile-image">
         <img

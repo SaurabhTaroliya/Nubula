@@ -121,7 +121,7 @@
 
 /* For adding Scroll bar to Recent tab */
 .recent-entries-list{
-    height: 100%;
+    height: calc(100vh - 120px);
     overflow-y: scroll;
 }
 .recent-entries-list::-webkit-scrollbar{

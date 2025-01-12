@@ -11,7 +11,8 @@ export const ContactUs = () => {
   const {userInfo, setUserInfo} = useContext(Context);
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
-  const [email, setEmail] = useState(userInfo.email);
+  // const [email, setEmail] = useState(userInfo.email);
+  const [messageError, setMessageError] = useState("");
 
   const [message, setMessage] = useState("");
 
@@ -25,9 +26,25 @@ export const ContactUs = () => {
     setIsChecked(event.target.checked);
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    if (!message) {
+      setMessageError("Message is required");
+      isValid = false;
+    } else {
+      setMessageError("");
+    }
+
+    return isValid;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent form submission
     // Add your form submission logic here
+
+    if (!validateForm()) {
+      return;
+    }
     const url = `${baseUrl}/User/Contact`;
     const token = localStorage.getItem('token');
     const decodedToken = jwtDecode(token);
@@ -49,16 +66,16 @@ export const ContactUs = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',width:'100vw', height: '100vh', padding:'1rem' }}>
-      <form style={{ width: '26rem' }} onSubmit={handleSubmit}>
+      <form style={{ width: '26rem' }}>
         {/* Name input */}
         <div data-mdb-input-init className="form-outline mb-4">
-          <input value={`${userInfo.firstname} ${userInfo.lastname}`} type="text" id="form4Example1" className="form-control" />
+          <input value={`${userInfo.firstname} ${userInfo.lastname}`} type="text" id="form4Example1" className="form-control" readOnly/>
           <label className="form-label" htmlFor="form4Example1">Name</label>
         </div>
 
         {/* Email input */}
         <div data-mdb-input-init className="form-outline mb-4">
-          <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="form4Example2" className="form-control" />
+          <input value={userInfo.email} onChange={(e) => setEmail(e.target.value)} type="email" id="form4Example2" className="form-control" readOnly/>
           <label className="form-label" htmlFor="form4Example2">Email address</label>
         </div> 
 
@@ -84,7 +101,7 @@ export const ContactUs = () => {
         </div> */}
 
         {/* Submit button */}
-        <button
+        <button onSubmit={(e)=> handleSubmit(e)}
           data-mdb-ripple-init
           type="submit"
           className="btn btn-primary btn-block mb-4"

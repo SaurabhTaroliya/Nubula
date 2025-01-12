@@ -54,7 +54,7 @@
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-.company-name h4 {
-    margin: 0;
-    font-weight: 600;
+.company-name img {
+    width: 45px;
+    height: 45px ;
 }

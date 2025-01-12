@@ -33,7 +33,6 @@ const Sidebar = () => {
       console.error("Error in loadPrompt:", error);
     }
   };
-  
 
   // const userData = JSON.parse(localStorage.getItem("user"));
   const userData = JSON.parse(localStorage.getItem("user")) || {};
@@ -43,7 +42,7 @@ const Sidebar = () => {
       setPrevPrompts(userData.userPromptHistory);
     }
   }, []); // Run only once on mount
-  
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -74,19 +73,35 @@ const Sidebar = () => {
                 })} */}
 
               {prevPrompts && prevPrompts.length > 0 ? (
-                prevPrompts.slice().reverse().map((item, index) => {
-                  // Ensure item is valid
-                  if (item) {
-                    return (
-                      <div
-                      // className="recent-entry"
-                      // key={index}
-                      // onClick={() => loadPrompt(item)}
-                      >
-                        {/* <img src={assets.message_icon} alt="message_icon" /> */}
-                        {/* <div className="edit-icon">
-                            <FaRegEdit/>
-                          </div> */}
+                prevPrompts
+                  .slice()
+                  .reverse()
+                  .map((item, index) => {
+                    // Ensure item is valid
+                    if (item) {
+                      return (
+                        // <div
+                        // // className="recent-entry"
+                        // // key={index}
+                        // // onClick={() => loadPrompt(item)}
+                        // >
+                        //   {/* <img src={assets.message_icon} alt="message_icon" /> */}
+                        //   {/* <div className="edit-icon">
+                        //       <FaRegEdit/>
+                        //     </div> */}
+                        //   <div className="parent-recent-entry" key={index}>
+                        //     <p
+                        //       className="recent-entry"
+                        //       onClick={() => loadPrompt(item)}
+                        //     >
+                        //       {item.slice(0, 18)}...
+                        //     </p>
+                        //     {/* {item.slice(0, 18)}... */}
+                        //     <div className="del-icon">
+                        //       <RiDeleteBin6Line />
+                        //     </div>
+                        //   </div>
+                        // </div>
                         <div className="parent-recent-entry" key={index}>
                           <p
                             className="recent-entry"
@@ -99,11 +114,10 @@ const Sidebar = () => {
                             <RiDeleteBin6Line />
                           </div>
                         </div>
-                      </div>
-                    );
-                  }
-                  return null; // Return null if item is invalid
-                })
+                      );
+                    }
+                    return null; // Return null if item is invalid
+                  })
               ) : (
                 <div>No prompts available</div> // Display a message if prevPrompts is empty
               )}

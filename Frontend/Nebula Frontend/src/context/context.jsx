@@ -158,7 +158,11 @@ const ContextProvider = (props) => {
     const [responseType, setResponseType] = useState("text");
     const [imageUrl, setImageUrl] = useState("");
     const [showFeature, setShowFeature] = useState(false);
-    const [userInfo, setUserInfo] = useState({});
+    // const [userInfo, setUserInfo] = useState({});
+    const [userInfo, setUserInfo] = useState({
+        id: '',
+        userPromptHistory: []
+    });
     const [fileData, setFileData] = useState();
     const [extended, setExtended] = useState(false);
 
@@ -305,6 +309,16 @@ const ContextProvider = (props) => {
         }
     };
 
+    // const updateUser = (prompt) => {
+    //     setUserInfo({
+    //         ...userInfo,
+    //         userPromptHistory: [
+    //             ...userInfo.userPromptHistory,
+    //             prompt
+    //         ]
+    //     });
+    // };
+
     const onSent = async (prompt) => {
         setResultData("");
         setLoading(true);
@@ -329,10 +343,25 @@ const ContextProvider = (props) => {
                 //     ...userInfo,
                 //     userPromptHistory: [...userInfo.userPromptHistory, prompt]
                 //   });
-                  setUserInfo((prev) => ({
-                    ...prev,
-                    userPromptHistory: [...(prev.userPromptHistory || []), prompt],
-                }));
+                // updateUser(prompt);
+                //   setUserInfo((prev) => ({
+                //     ...prev,
+                //     userPromptHistory: [...(prev.userPromptHistory || []), prompt],
+                // }));
+
+                // setUserInfo((prev) => {
+                //     const updatedUserInfo = {
+                //       ...prev,
+                //       userPromptHistory: [...(prev.userPromptHistory || []), prompt],
+                //     };
+                  
+                //     // Update localStorage with the new userInfo
+                //     localStorage.setItem("user", JSON.stringify(updatedUserInfo));
+                  
+                //     return updatedUserInfo;
+                //   });
+                console.log(userInfo.userPromptHistory);
+                
                 // userInfo.userPromptHistory = [...userInfo.userPromptHistory, prompt]
                 response = await run(prompt,fileData);  // Handles text response
                 // response = formatResponse(response)
@@ -351,18 +380,22 @@ const ContextProvider = (props) => {
             //   const response = await axios.put(url,
             //     userInfo
             //   );
-
-                await axios.put(url, {
+            const updatedUserInfo = 
+                {
                     ...userInfo,
                     userPromptHistory: [
                         ...userInfo.userPromptHistory,
                         prompt
                     ]
-                });
+                }
+
+                await axios.put(url, updatedUserInfo);
+                setUserInfo(updatedUserInfo);
 
                 console.log(userInfo);
                 localStorage.removeItem("user"); // Clear localStorage with particular Key
-                localStorage.setItem("user",JSON.stringify(userInfo)); // Update the loacalStorage of Key - "user"
+                // localStorage.setItem("user",JSON.stringify(userInfo)); // Update the loacalStorage of Key - "user"
+                localStorage.setItem("user", JSON.stringify(updatedUserInfo));
                 
             }
             catch(error){
