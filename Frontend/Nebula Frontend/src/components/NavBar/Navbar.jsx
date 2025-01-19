@@ -81,7 +81,7 @@ export const Navbar = () => {
             {/* <span className="expand-right-icon" > */}
               <TbLayoutSidebarRightExpand onClick={() => setExtended((prev) => !prev)} className="icon-expand right-expand" />
             {/* </span> */}
-            <span className="main-new-chat">
+            <span className="main-new-chat" onClick={() => newChat()}>
               <NewChat />
             </span>
           </div>

@@ -19,18 +19,22 @@ export const Feature = () => {
 
   const logout = () =>{
     localStorage.clear();
+    setShowFeature((prev) => !prev);
     navigate('/Login');
   }
 
   const contactUs = () =>{
+    setShowFeature((prev) => !prev);
     navigate('/ContactUs');
   }
 
   const AboutUs = () =>{
+    setShowFeature((prev) => !prev);
     navigate('/AboutUs');
   }
 
   const Profile = () =>{
+    setShowFeature((prev) => !prev);
     navigate('/Profile');
   }
 

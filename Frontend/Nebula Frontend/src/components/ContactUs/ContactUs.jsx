@@ -53,8 +53,8 @@ export const ContactUs = () => {
       Email: userInfo.email,
       Message: message
     }
-    const response = axios.post(url, data)
     try {
+      const response = axios.post(url, data);
       console.log(response)
       navigate("/chatApp");
       
@@ -101,7 +101,7 @@ export const ContactUs = () => {
         </div> */}
 
         {/* Submit button */}
-        <button onSubmit={(e)=> handleSubmit(e)}
+        <button onClick={(e)=> handleSubmit(e)}
           data-mdb-ripple-init
           type="submit"
           className="btn btn-primary btn-block mb-4"
