@@ -41,12 +41,22 @@
     align-items: center;
     background-color: #333;
     padding: 1.5rem;
+    font-size: 13px;
   }
   
   .sign-up-content {
     width: 100%;
     max-width: 380px;
     color: #fff;
+    .logo-icon{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      img{
+        width: 45px;
+        height: 45px;
+      }
+    }
   }
   
   /* Title */
@@ -158,6 +168,15 @@
     .sign-up-content {
       max-width: 100%;
       padding: 0 1rem;
+      .logo-icon{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+        img{
+          width: 45px;
+          height: 45px;
+        }
+      }
     }
   
     /* Adjust title size for smaller screens */

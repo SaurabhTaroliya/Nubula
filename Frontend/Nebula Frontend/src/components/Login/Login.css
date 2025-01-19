@@ -47,6 +47,15 @@
     width: 100%;
     max-width: 380px;
     color: #fff;
+    .logo-icon{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      img{
+        width: 45px;
+        height: 45px;
+      }
+    }
   }
   
   /* Title */
@@ -159,6 +168,15 @@
     .login-content {
       max-width: 100%;
       padding: 0 1rem;
+      .logo-icon{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+        img{
+          width: 45px;
+          height: 45px;
+        }
+      }
     }
   
     /* Adjust title size for smaller screens */

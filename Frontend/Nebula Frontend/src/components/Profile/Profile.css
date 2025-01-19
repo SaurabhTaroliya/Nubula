@@ -171,6 +171,7 @@
 .profile-field {
   display: flex;
   flex-direction: column;
+  width: 245px;
 }
 
 .profile-field label {
@@ -190,6 +191,7 @@
     padding: 0px;
     border: none;
     border-radius: 0px;
+    outline: none;
   }
 }
 
@@ -207,6 +209,7 @@
 
 .bio-field {
   grid-column: span 2;
+  width: auto;
 }
 
 .profile-actions {

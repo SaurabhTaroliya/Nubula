@@ -80,7 +80,10 @@ const SignUp = () => {
         {/* Right side: Form */}
         <div className="sign-up-form-container">
           <div className="sign-up-content">
-            <h2 className="sign-up-title">Create your account</h2>
+            {/* <h3 className="sign-up-title">Create your account</h3> */}
+            <div className="logo-icon">
+                          <img src={assets.icon2} alt="" />
+                        </div>
 
             <form onSubmit={handleSubmit} className="sign-up-form">
               {/* First Name and Last Name */}

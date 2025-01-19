@@ -179,9 +179,12 @@ const Login = () => {
         {/* Right side: Form */}
         <div className="login-form-container">
           <div className="login-content">
-            <i className="fas fa-cubes fa-2x logo-icon"></i>
-            <h2 className="login-title">Logo</h2>
-            <p className="login-subtitle">Sign into your account</p>
+            {/* <i className="fas fa-cubes fa-2x logo-icon"></i> */}
+            {/* <h2 className="login-title">Logo</h2> */}
+            <div className="logo-icon">
+              <img src={assets.icon2} alt="" />
+            </div>
+            <p className="login-subtitle">Sign in to your account</p>
 
             <form onSubmit={handleSubmit} className="login-form">
               <div className="form-group">

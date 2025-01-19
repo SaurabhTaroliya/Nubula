@@ -331,7 +331,7 @@ const Profile = () => {
           <div className="fieldPlusIcon">
             <input
               type="url"
-              name="github"
+              name="linkedIn"
               value={user.linkedIn}
               onChange={handleChange}
             />
