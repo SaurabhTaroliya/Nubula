@@ -7,6 +7,8 @@ import Main from "../Main/Main";
 import { Navbar } from "../NavBar/Navbar.jsx";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Sidebar = () => {
   // const [extended, setExtended] = useState(false);
@@ -18,12 +20,15 @@ const Sidebar = () => {
     newChat,
     extended,
     setExtended,
+    userInfo,
+    setUserInfo,
   } = useContext(Context);
 
   // const loadPrompt = async (prompt) => {
   //   setRecentPrompt(prompt);
   //   await onSent(prompt);
   // };
+  const baseUrl = "https://localhost:7260/api";
 
   const loadPrompt = async (prompt) => {
     try {
@@ -36,6 +41,38 @@ const Sidebar = () => {
 
   // const userData = JSON.parse(localStorage.getItem("user"));
   const userData = JSON.parse(localStorage.getItem("user")) || {};
+
+  const deletePrompt = async (index, item) => {
+    // API Call to update User Prompt History
+    const id = userInfo.id;
+    const url = `${baseUrl}/User/Update/${id}`;
+    // console.log("prompt deleted");
+
+    // const data = userData || userInfo;
+    try {
+      const updatedUserInfo = {
+        ...userInfo,
+        userPromptHistory: userInfo.userPromptHistory.filter(
+          (val, ind) => val !== item
+        ),
+      };
+      const res = await axios.put(url, updatedUserInfo);
+      if (res) {
+        toast.success("Prompt deleted successfully");
+        console.log(res);
+        setPrevPrompts(updatedUserInfo.userPromptHistory);
+        setUserInfo(updatedUserInfo);
+        console.log(userInfo);
+        localStorage.removeItem("user"); // Clear localStorage with particular Key
+        // localStorage.setItem("user",JSON.stringify(userInfo)); // Update the loacalStorage of Key - "user"
+        localStorage.setItem("user", JSON.stringify(updatedUserInfo));
+      } else {
+        toast.error("Prompt deletion failed");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     if (prevPrompts.length === 0) {
@@ -110,7 +147,10 @@ const Sidebar = () => {
                             {item.slice(0, 18)}...
                           </p>
                           {/* {item.slice(0, 18)}... */}
-                          <div className="del-icon">
+                          <div
+                            className="del-icon"
+                            onClick={() => deletePrompt(index, item)}
+                          >
                             <RiDeleteBin6Line />
                           </div>
                         </div>
